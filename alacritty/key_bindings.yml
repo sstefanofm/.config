@@ -1,0 +1,3 @@
+key_bindings:
+  # lets you put a new line above the current line in nvim
+  - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }

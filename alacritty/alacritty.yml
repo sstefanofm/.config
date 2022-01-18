@@ -5,11 +5,13 @@
 live_config_reload: true
 
 import:
-    # Theme
+    # theme
     - ~/.config/alacritty/themes/nord.yml
-    # Font
+    # font
     - ~/.config/alacritty/font.yml
-    # Window sizing
+    # window sizing
     - ~/.config/alacritty/window.yml
-    # Cursor
+    # cursor
     #- ~/.config/alacritty/cursor.yml
+    # key bindings
+    - ~/.config/alacritty/key_bindings.yml
