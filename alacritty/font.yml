@@ -1,0 +1,28 @@
+# available_font_families:
+#   monospace; 10 
+#   agave; 11; 
+#   Iosevka 
+#   inconsolata; 11; 
+#   CodeNewRoman; 10.5
+#   Hack; 
+#   Victor Mono; 10; 
+
+font:
+  normal:
+    family: Iosevka  
+
+  bold: 
+    family: Iosevka 
+
+  italic:
+    family: Iosevka 
+
+  bold_italic:
+    family: Iosevka 
+
+  size: 10.5
+
+  # Spacing between characters
+  offset: 
+    x: 0
+    y: 0

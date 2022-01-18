@@ -1,0 +1,270 @@
+#--- execute some programs ---#
+
+exec_always --no-startup-id picom --experimental-backends 
+exec --no-startup-id nitrogen --restore #; sleep 1; compton -b
+exec --no-startup-id mate-power-manager
+exec_always --no-startup-id ~/.config/i3/scripts/rename_workspaces.sh
+
+#--- i3bar ---#
+
+bar {
+    #-- general config --#
+	status_command i3blocks 
+	position top
+	
+    font pango:Hack Nerd Font 10
+    
+    strip_workspace_numbers yes 
+
+    separator_symbol "]["
+
+    i3bar_command i3bar --transparency
+
+	colors {
+		background #0f0f0faa
+		statusline #d9dee9
+
+		#<colorclass> 		<border> 	<backg>		<text>
+		focused_workspace 	#0f0f0faa   #0f0f0faa 	#d8dee9
+		inactive_workspace 	#0f0f0faa   #0f0f0faa   #6c6e74
+        binding_mode        #bf616a     #bf616a     #0f0f0faa
+	}
+}
+
+
+#--- general configs ---#
+
+default_border pixel 0
+default_floating_border pixel 0
+
+hide_edge_borders none
+
+font xft:Victor Mono Bold 10
+
+	#-- gaps --#
+gaps inner 10
+gaps outer -4
+#smart_gaps on
+
+
+#--- colors ---#
+
+# class					border  backgr  text    indic	child_border
+client.focused			#4c566a #4c566a #eceff4 #4c566a #4c566a
+client.focused_inactive #434c5e #434c5e #d8dee9 #434c5e #434c5e
+client.unfocused		#3b4252 #3b4252 #c4c9d3 #3b4252 #3b4252
+
+client.urgent			#1d1f21 #1d1f21 #d8dee9 #000000 #000000 
+client.placeholder		#000000 #1d1f21 #d8dee9 #000000 #123456 
+
+client.background #ffffff
+
+
+#--- controls ---#
+
+floating_modifier $mod
+
+# Super is Mod4; Alt is Mod1
+set $mod Mod4
+
+	#-- launching programs controls --#
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+d exec --no-startup-id rofi -show run -font "Inconsolata SemiBold 12"
+
+# Window kill command
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# navigate workspaces next / previous
+bindsym $mod+Ctrl+l workspace next
+bindsym $mod+Ctrl+h workspace prev
+
+# splitting container
+bindsym $mod+v split vertical
+bindsym $mod+c split horizontal
+bindsym $mod+x split toggle
+
+# toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+t layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# toggle sticky
+bindsym $mod+n sticky toggle
+
+# focus the parent container
+bindsym $mod+p focus parent
+
+# move to the scratchpad / show the scratchpad
+bindsym $mod+minus move scratchpad
+bindsym $mod+plus scratchpad show
+
+	#-- workspaces --#
+set $ws1 "1:α"
+set $ws2 "2:β"
+set $ws3 "3:γ"
+set $ws4 "4:δ"
+set $ws5 "5:ε"
+set $ws6 "6:ζ"
+set $ws7 "7:ξ"
+set $ws8 "8:η"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+
+
+# Open specific applications in floating mode
+	# for_window [class="<< WM_CLASS >>"] floating enable border pixel 1 
+for_window [class="(?i)virtualbox"] floating enable 
+for_window [class="fim"] floating enable
+for_window [class="yad"] floating enable
+for_window [class="mpv"] fullscreen enable
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+
+#--- modes ---#
+
+# change borders
+bindsym $mod+b mode "$change_borders"
+set $change_borders Change borders: (0), (2) 
+mode "$change_borders" {
+	bindsym 0 border pixel 0, mode "default"
+	bindsym 2 border pixel 2, mode "default"
+	
+    bindsym Escape mode "default"
+}
+
+# Set shut down, restart and locking features
+bindsym $mod+0 mode "$mode_system"
+set $mode_system System: (l)ogout, (e)xit
+mode "$mode_system" {
+	bindsym e exit 
+	bindsym l exec --no-startup-id "kill -9 -1"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "$resize"
+set $resize Resize: w_shrink/w_grow (h/l), h_shrink/h_grow (j/k)
+mode "$resize" {
+        bindsym h resize shrink width 20 px 
+        bindsym l resize grow width 20 px 
+        bindsym j resize shrink height 20 px
+        bindsym k resize grow height 20 px 
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px 
+        bindsym Right resize grow width 10 px 
+        bindsym Down resize shrink height 10 px 
+        bindsym Up resize grow height 10 px 
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o)uter, (i)nner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# set power-manager and volume control
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 -q set Master 0.75dB+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 -q set Master 0.75db- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+
+# touchpad on and off controller on laptop with Fn+<touchpad control functional key>
+bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
+bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
+

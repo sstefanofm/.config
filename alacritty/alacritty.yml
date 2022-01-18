@@ -1,0 +1,15 @@
+#===                            ===# 
+#--- Alacritty main config file ---#
+#===                            ===#
+
+live_config_reload: true
+
+import:
+    # Theme
+    - ~/.config/alacritty/themes/nord.yml
+    # Font
+    - ~/.config/alacritty/font.yml
+    # Window sizing
+    - ~/.config/alacritty/window.yml
+    # Cursor
+    #- ~/.config/alacritty/cursor.yml
