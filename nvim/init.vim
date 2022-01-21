@@ -47,26 +47,34 @@ call plug#begin()
     "-- statusline --"
     Plug 'itchyny/lightline.vim'
 
-    "-- other --"
+    "-- ide --"
     Plug 'scrooloose/nerdtree'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'christoomey/vim-tmux-navigator'
+
+    "-- other --"
     Plug 'ryanoasis/vim-devicons'
     Plug 'ap/vim-css-color'
 call plug#end()
 
 
-"--- statusline ---"
+"--- plugin customization ---"
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+let g:lightline = { 'colorscheme': 'wombat', }
+let NERDTreeQuitOnOpen=1
 
 
 "--- keyboard shortcuts ---"
 
 let mapleader = " " 
 
-nnoremap <leader>nt :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <leader>noh :noh<CR>
-nnoremap <CR> o<Esc>k
-nnoremap <S-CR> O<Esc>j
+    "-- basic commands --"
+nmap <Leader>q :q<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>noh :noh<CR>
+nmap <CR> o<Esc>k
+nmap <S-CR> O<Esc>j
+
+    "-- plugin related --"
+nmap <Leader>nt :NERDTreeFind<CR>
+nmap <Leader>s <Plug>(easymotion-s2)
