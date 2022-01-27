@@ -21,12 +21,12 @@ signal=10
 
 [iface]
 background=#ebcb8b
-min_width=170
+min_width=130
 command=~/bin/i3blocks_iface.bash
 interval=10
 label= 
 # 1 to display the name instead of the IP address
-display_wifi_name=0
+display_wifi_name=1
 
 [keyboard]
 background=#a3be8c

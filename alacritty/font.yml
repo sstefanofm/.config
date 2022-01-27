@@ -9,16 +9,16 @@
 
 font:
   normal:
-    family: Iosevka  
+    family: Agave  
 
   bold: 
-    family: Iosevka 
+    family: Agave 
 
   italic:
-    family: Iosevka 
+    family: Agave 
 
   bold_italic:
-    family: Iosevka 
+    family: Agave 
 
   size: 10.5
 
