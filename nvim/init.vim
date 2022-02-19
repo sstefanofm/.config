@@ -28,7 +28,7 @@ set backupdir=~/.cache/nvim
 
 highlight LineNr cterm=NONE ctermfg=DarkGrey ctermbg=NONE
 highlight CursorLineNr cterm=Bold ctermfg=Grey ctermbg=NONE
-highlight CursorLine cterm=NONE ctermbg=Black ctermfg=NONE
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE
 
 highlight Comment cterm=Italic ctermfg=Blue
 

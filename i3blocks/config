@@ -6,22 +6,22 @@
 #--- global config ---#
 
 align=center
-color=#0f0f0faa
+color=#1a1c23
 
 
 #--- modules --#
 
 [volume]
-background=#d08770
-min_width=70
+background=#00000000
+#min_width=70
 command=~/bin/i3blocks_volume.bash
 interval=once
 label=墳 
 signal=10
 
 [iface]
-background=#ebcb8b
-min_width=130
+background=#00000000
+#min_width=130
 command=~/bin/i3blocks_iface.bash
 interval=10
 label= 
@@ -29,20 +29,20 @@ label=
 display_wifi_name=1
 
 [keyboard]
-background=#a3be8c
-min_width=70
+background=#00000000
+#min_width=70
 command=~/bin/i3blocks_keyboard.bash
 interval=1
 
 [date]
-background=#b48ead
-min_width=160
+background=#00000000
+#min_width=160
 command=~/bin/i3blocks_calendar.sh
 interval=1
 
 [clock]
-background=#b48ead
-min_width=90
+background=#00000000
+#min_width=90
 command=~/bin/i3blocks_clock.sh
 interval=30
 

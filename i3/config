@@ -8,27 +8,35 @@ exec_always --no-startup-id ~/.config/i3/scripts/rename_workspaces.sh
 #--- i3bar ---#
 
 bar {
-    #-- general config --#
+  #-- general config --#
 	status_command i3blocks 
 	position top
 	
-    font pango:Hack Nerd Font 10
-    
-    strip_workspace_numbers yes 
+  font pango:Hack Nerd Font 10
+  
+  strip_workspace_numbers yes 
 
-    separator_symbol "]["
+  separator_symbol " "
 
-    i3bar_command i3bar --transparency
+  i3bar_command i3bar --transparency
 
-	colors {
-		background #0f0f0faa
-		statusline #d9dee9
+	#colors {
+	#	background #0f0f0faa
+	#	statusline #d9dee9
 
-		#<colorclass> 		<border> 	<backg>		<text>
-		focused_workspace 	#0f0f0faa   #0f0f0faa 	#d8dee9
-		inactive_workspace 	#0f0f0faa   #0f0f0faa   #6c6e74
-        binding_mode        #bf616a     #bf616a     #0f0f0faa
-	}
+	#	#<colorclass> 		  <border> 	  <backg>		  <text>
+	#	focused_workspace 	#0f0f0faa   #0f0f0faa 	#d8dee9
+	#	inactive_workspace 	#0f0f0faa   #0f0f0faa   #6c6e74
+  #  binding_mode        #bf616a     #bf616a     #0f0f0faa
+	#}
+  colors {
+    background #00000000
+    statusline #00000000
+
+    focused_workspace #00000000 #00000000 #fadad1
+    inactive_workspace #00000000 #00000000 #1a1c23
+    binding_mode #fadad1ff #fadad199 #1a1c23
+  }
 }
 
 
@@ -66,6 +74,9 @@ floating_modifier $mod
 
 # Super is Mod4; Alt is Mod1
 set $mod Mod4
+
+  # custom key bindings
+bindsym Mod1+k exec ~/bin/change_key_layout.bash
 
 	#-- launching programs controls --#
 bindsym $mod+Return exec --no-startup-id alacritty
