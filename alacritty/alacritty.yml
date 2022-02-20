@@ -16,3 +16,5 @@ import:
     #- ~/.config/alacritty/cursor.yml
     # key bindings
     - ~/.config/alacritty/key_bindings.yml
+shell:
+  program: /bin/fish
