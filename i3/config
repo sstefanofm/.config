@@ -1,6 +1,7 @@
 #--- execute some programs ---#
 
 exec_always --no-startup-id picom --experimental-backends 
+exec_always --no-startup-id xautolock -time 10 -locker slock
 exec --no-startup-id nitrogen --restore #; sleep 1; compton -b
 exec --no-startup-id mate-power-manager
 exec_always --no-startup-id ~/.config/i3/scripts/rename_workspaces.sh
@@ -80,7 +81,7 @@ bindsym Mod1+k exec ~/bin/change_key_layout.bash
 
 	#-- launching programs controls --#
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -c -l 10
 
 # Window kill command
 bindsym $mod+Shift+q kill
