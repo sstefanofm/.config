@@ -32,6 +32,8 @@ highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE
 
 highlight Comment cterm=Italic ctermfg=Blue
 
+set guicursor=
+
 syntax enable
 
 

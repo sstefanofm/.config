@@ -9,20 +9,21 @@
 
 font:
   normal:
-    family: Agave  
+    family: monospace  
 
   bold: 
-    family: Agave 
+    family: monospace 
 
   italic:
-    family: Agave 
+    family: monospace 
 
   bold_italic:
-    family: Agave 
+    family: monospace 
 
-  size: 10.5
+  size: 9.5
 
   # Spacing between characters
   offset: 
     x: 0
     y: 0
+

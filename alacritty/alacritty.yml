@@ -6,15 +6,19 @@ live_config_reload: true
 
 import:
     # theme
-    - ~/.config/alacritty/themes/horizon-light.yaml
+    #- ~/.config/alacritty/themes/horizon-light.yaml
 
     # font
     - ~/.config/alacritty/font.yml
+    
     # window sizing
-    - ~/.config/alacritty/window.yml
+    #- ~/.config/alacritty/window.yml
+    
     # cursor
-    #- ~/.config/alacritty/cursor.yml
+    - ~/.config/alacritty/cursor.yml
+    
     # key bindings
     - ~/.config/alacritty/key_bindings.yml
+
 shell:
   program: /bin/fish

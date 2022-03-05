@@ -1,14 +1,12 @@
 cursor:
-  style: 
-    # Values for 'shape'
+  style: Beam
     # Block / Underline / Beam
-    shape: Beam
 
     # Values for 'binking'
     # Never (prevent the cursor from ever blinking) / Off / On / Always (force)
-    blinking: On
+  blinking: On
 
-    blink_interval: 800
+  blink_interval: 800
 
     # When window is not focused, the cursor will be a hollow box
-    unfocused_hollow: true
+  unfocused_hollow: true
