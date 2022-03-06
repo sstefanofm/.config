@@ -72,6 +72,7 @@ bindsym Mod1+k exec ~/bin/change_key_layout.bash
 
 	#-- launching programs controls --#
 bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Shift+Return exec --no-startup-id alacritty --command tmux
 bindsym $mod+d exec --no-startup-id dmenu_run -c -l 10
 
 # Window kill command
