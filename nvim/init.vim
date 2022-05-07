@@ -6,7 +6,7 @@
 
 set showmatch
 set noignorecase
-set mouse=a
+set mouse=r
 set hlsearch
 set incsearch
 
@@ -41,6 +41,8 @@ call plug#begin()
     "-- ide --"
 
     "-- other --"
+      " syntax highlighting for kitty's configuration files
+    Plug 'fladson/vim-kitty'
 call plug#end()
 
 colorscheme onedark
