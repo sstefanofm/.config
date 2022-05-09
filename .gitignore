@@ -1,7 +1,6 @@
-BraveSoftware/
-dmenu/
-dwm/
-dconf/
-gtk-3.0/
-spotify/
-gtk-2.0/
+/*
+
+!.gitignore
+!kitty/
+!neofetch/
+!nvim/

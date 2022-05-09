@@ -33,6 +33,7 @@ syntax enable
 call plug#begin()
     "-- themes --"
     Plug 'navarasu/onedark.nvim'
+    Plug 'morhetz/gruvbox'
 
     "-- code completion --"
 
@@ -45,7 +46,7 @@ call plug#begin()
     Plug 'fladson/vim-kitty'
 call plug#end()
 
-colorscheme onedark
+colorscheme gruvbox
  
 "--- plugin customization ---"
 
