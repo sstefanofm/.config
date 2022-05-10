@@ -21,13 +21,16 @@ set number
 set cursorline
 
 set scrolloff=8
+set hidden
+set laststatus=2
 
 set wildmode=longest,list 
 set clipboard=unnamedplus
 
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175           
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 set termguicolors
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list
+set listchars=tab:‣\ ,trail:·,nbsp:·
 syntax enable
 
 
@@ -35,40 +38,43 @@ syntax enable
 
 call plug#begin()
     "-- themes --"
-    Plug 'navarasu/onedark.nvim'
-    Plug 'morhetz/gruvbox'
+    source ~/.config/nvim/plugins/gruvbox.vim
+    source ~/.config/nvim/plugins/onedark.vim
 
     "-- code completion --"
-    Plug 'ap/vim-css-color'
 
     "-- statusline --"
+    source ~/.config/nvim/plugins/airline.vim
 
     "-- ide --"
+    source ~/.config/nvim/plugins/commentary.vim
 
     "-- other --"
       " syntax highlighting for kitty's configuration files
-    Plug 'fladson/vim-kitty'
+    source ~/.config/nvim/plugins/kitty.vim
+    source ~/.config/nvim/plugins/css-color.vim
 
 call plug#end()
-
-
-"--- plugin customization ---"
-
-colorscheme gruvbox
  
+  
+colorscheme gruvbox
+
 
 "--- keymaps ---"
 
 let mapleader = "\<space>" 
 
-    "-- basic commands --"
 nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
-nmap <Leader>nh :noh<CR>
 nmap <CR> o<Esc>k
 nmap <S-CR> O<Esc>j
 
-"    "-- plugin related --"
-"nmap <Leader>nt :NERDTreeFind<CR>
-"nmap <Leader>s <Plug>(easymotion-s2)
+nmap <Leader>k :set hlsearch<CR>
+nmap <Leader>j :noh<CR>
 
+nmap <Leader>f :edit <cfile><CR>
+nmap <Leader>e :tabnew<CR>:edit 
+
+nmap <Leader>t :tabnew<CR>
+nmap <Leader>. :tabnext<CR>
+nmap <Leader>, :tabprevious<CR>
