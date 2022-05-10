@@ -1,6 +1,7 @@
-"===                 ==="
-"--- nvim's init.vim ---"
-"===                 ==="
+"======         stf         ======"
+"--- "--- nvim's init.vim ---" ---"
+"======                     ======"
+
 
 "--- general config ---"
 
@@ -19,16 +20,18 @@ set relativenumber
 set number
 set cursorline
 
-set scrolloff=4
+set scrolloff=8
 
 set wildmode=longest,list 
 set clipboard=unnamedplus
 
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175           
 set termguicolors
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 syntax enable
 
-"--- vimplug section ---"
+
+"--- plugins ---"
 
 call plug#begin()
     "-- themes --"
@@ -36,6 +39,7 @@ call plug#begin()
     Plug 'morhetz/gruvbox'
 
     "-- code completion --"
+    Plug 'ap/vim-css-color'
 
     "-- statusline --"
 
@@ -44,27 +48,26 @@ call plug#begin()
     "-- other --"
       " syntax highlighting for kitty's configuration files
     Plug 'fladson/vim-kitty'
+
 call plug#end()
+
+
+"--- plugin customization ---"
 
 colorscheme gruvbox
  
-"--- plugin customization ---"
 
-"let g:lightline = { 'colorscheme': 'onedark', }
-"let NERDTreeQuitOnOpen=1
-"
-"
-""--- keyboard shortcuts ---"
-"
-"let mapleader = " " 
-"
-"    "-- basic commands --"
-"nmap <Leader>q :q<CR>
-"nmap <Leader>w :w<CR>
-"nmap <Leader>noh :noh<CR>
-"nmap <CR> o<Esc>k
-"nmap <S-CR> O<Esc>j
-"
+"--- keymaps ---"
+
+let mapleader = "\<space>" 
+
+    "-- basic commands --"
+nmap <Leader>q :q<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>nh :noh<CR>
+nmap <CR> o<Esc>k
+nmap <S-CR> O<Esc>j
+
 "    "-- plugin related --"
 "nmap <Leader>nt :NERDTreeFind<CR>
 "nmap <Leader>s <Plug>(easymotion-s2)
