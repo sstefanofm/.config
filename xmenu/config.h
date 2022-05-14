@@ -4,7 +4,7 @@ static struct Config config = {
 
 	/* colors */
 	.background_color = "#282828",
-	.foreground_color = "#a89984",
+	.foreground_color = "#ffffff",
 	.selbackground_color = "#98971a",
 	.selforeground_color = "#282828",
 	.separator_color = "#282828",
@@ -31,7 +31,7 @@ static struct Config config = {
 	.triangle_height = 7,
 
 	/* the icon size is equal to .height_pixels - .iconpadding * 2 */
-	.iconpadding = 2,
+	.iconpadding = 6,
 
 	/* area around the icon, the triangle and the separator */
 	.horzpadding = 8,
