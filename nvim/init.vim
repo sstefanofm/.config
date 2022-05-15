@@ -41,18 +41,20 @@ call plug#begin()
     source ~/.config/nvim/plugins/gruvbox.vim
     source ~/.config/nvim/plugins/onedark.vim
 
-    "-- code completion --"
-
     "-- statusline --"
     source ~/.config/nvim/plugins/airline.vim
 
     "-- ide --"
     source ~/.config/nvim/plugins/commentary.vim
+    source ~/.config/nvim/plugins/emmet.vim
+    source ~/.config/nvim/plugins/auto-pairs.vim
+    source ~/.config/nvim/plugins/coc.vim
 
     "-- other --"
       " syntax highlighting for kitty's configuration files
     source ~/.config/nvim/plugins/kitty.vim
     source ~/.config/nvim/plugins/css-color.vim
+    source ~/.config/nvim/plugins/discord.vim
 
 call plug#end()
  
@@ -72,7 +74,7 @@ nmap <S-CR> O<Esc>j
 nmap <Leader>k :set hlsearch<CR>
 nmap <Leader>j :noh<CR>
 
-nmap <Leader>f :edit <cfile><CR>
+" nmap <Leader>f :edit <cfile><CR>
 nmap <Leader>e :tabnew<CR>:edit 
 
 nmap <Leader>t :tabnew<CR>

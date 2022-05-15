@@ -1,0 +1,9 @@
+{
+  "prettier.trailingComma": "es5",
+  "prettier.semi": true,
+  "prettier.enable": true,
+  "prettier.arrowParens": "always",
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "coc.preferences.formatOnSaveFiletypes": ["*"]
+}
