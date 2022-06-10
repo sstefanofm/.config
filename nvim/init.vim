@@ -31,7 +31,6 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinko
 set termguicolors
 set list
 set listchars=tab:‣\ ,trail:·,nbsp:·
-syntax enable
 
 
 "--- plugins ---"
@@ -49,18 +48,24 @@ call plug#begin()
     source ~/.config/nvim/plugins/emmet.vim
     source ~/.config/nvim/plugins/auto-pairs.vim
     source ~/.config/nvim/plugins/coc.vim
+    source ~/.config/nvim/plugins/nerdtree.vim
+    source ~/.config/nvim/plugins/easymotion.vim
 
     "-- other --"
       " syntax highlighting for kitty's configuration files
     source ~/.config/nvim/plugins/kitty.vim
     source ~/.config/nvim/plugins/css-color.vim
     source ~/.config/nvim/plugins/discord.vim
+      " highlight when searching, disable highlight when done searching
+    source ~/.config/nvim/plugins/cool.vim
+    source ~/.config/nvim/plugins/devicons.vim
 
 call plug#end()
  
   
-colorscheme gruvbox
-
+syntax enable
+colorscheme onedark 
+" onedark, gruvbox,
 
 "--- keymaps ---"
 
@@ -71,12 +76,11 @@ nmap <Leader>w :w<CR>
 nmap <CR> o<Esc>k
 nmap <S-CR> O<Esc>j
 
-nmap <Leader>k :set hlsearch<CR>
-nmap <Leader>j :noh<CR>
-
-" nmap <Leader>f :edit <cfile><CR>
 nmap <Leader>e :tabnew<CR>:edit 
 
 nmap <Leader>t :tabnew<CR>
-nmap <Leader>. :tabnext<CR>
-nmap <Leader>, :tabprevious<CR>
+nmap <Leader>j :tabnext<CR>
+nmap <Leader>k :tabprevious<CR>
+
+nmap <Leader>s <Plug>(easymotion-s2)
+nmap <Leader>t <Plug>(easymotion-t2)
