@@ -79,8 +79,8 @@ nmap <S-CR> O<Esc>j
 nmap <Leader>e :tabnew<CR>:edit 
 
 nmap <Leader>t :tabnew<CR>
-nmap <Leader>j :tabnext<CR>
-nmap <Leader>k :tabprevious<CR>
+nmap <Leader>k :tabnext<CR>
+nmap <Leader>j :tabprevious<CR>
 
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>t <Plug>(easymotion-t2)
